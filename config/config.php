@@ -6,13 +6,13 @@
  *---------------------------------------------------------------
  */
 
-$globalPage['info']['applicationName']	= 'Starter Template';
+$globalPage['info']['applicationName']	= 'st.xno.li';
 
-$globalPage['info']['title'] 			= 'Example.com | ';
+$globalPage['info']['title'] 			= 'st.xno.li | ';
 $globalPage['info']['tags']				= 'Example, tags, for, project, ';
 $globalPage['info']['desc']				= 'Example description. ';
 $globalPage['info']['author']			= 'Example examplesson';
-$globalPage['info']['htmlLanguage']		= 'en';
+$globalPage['info']['htmlLanguage']		= 'sv';
 
 
 /*
