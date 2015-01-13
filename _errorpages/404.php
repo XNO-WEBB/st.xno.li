@@ -6,13 +6,13 @@
 <style>
 body {
 	padding: 0;
-	background-color: #2A2A2A;
+	background-color: #32AFFF;
 }
 
 .middle {
 	width: 80px;
 	height: 80px;
-	background-color: #1E1E1F;
+	background-color: rgba(0, 0, 0, 0.32);
 	border-radius: 100%;
 	position: fixed;
 	top: 50%;

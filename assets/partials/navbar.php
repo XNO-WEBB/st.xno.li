@@ -1,32 +1,22 @@
-<nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">PHP TEMPLATE</a>
+<div class="navbar-container">
+  <a onclick="openSidebar(); event.preventDefault();" href="#" class="sidebar-toggle-container">
+    <img class="arrow one" src="<?php print baseurl("assets/img/down-arrow.png"); ?>">
+    <img class="arrow two" src="<?php print baseurl("assets/img/down-arrow.png"); ?>">
+  </a>
+  
+  <div class="sidebar-menu-container">
+    <div class="menu-title">
+        <div class="logo-container">
+          <img src="<?php print baseurl("assets/img/st-logo-60.png"); ?>" alt="" class="logo">
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-</nav>
+        <div class="title">
+          MENY
+        </div>
+    </div>
+    <ul class="item-list">
+        <li><a href="#"><img src="<?php print baseurl("assets/img/info-icon.png"); ?>">OM OSS <div class="spinin-wheel"></div></a></li>
+        <li><a href="#"><img src="<?php print baseurl("assets/img/login-icon.png"); ?>">LOGGA IN <div class="spinin-wheel"></div></a></li>
+        <li><a href="#"><img src="<?php print baseurl("assets/img/login-icon.png"); ?>">REGISTRERA <div class="spinin-wheel"></div></a></li>
+    </ul>
+  </div>
+</div>

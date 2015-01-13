@@ -10,7 +10,6 @@
 <body>
 <?php print $globalPage['partials']['navbar']; ?>
 
-<?php include basein("ajax/skanetrafiken.php"); ?>
 
 <?php print $globalPage['partials']['bottom']; ?>
 </body>

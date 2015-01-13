@@ -1,0 +1,122 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);
+
+body {
+	background: #32AFFF;
+	font-family: 'Open Sans';
+}
+
+/*
+	SIDE BAR
+*/
+
+.sidebar-toggle-container {
+	background: #2994D8;
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	cursor: pointer;
+	.arrow {
+		width: 45px;
+		position: absolute;
+		left: 50%;
+		margin-left: -23px;
+		transition: all 0.5s;
+		&.one {
+			top: 21px;
+		}
+		&.two {
+			top: 37px;
+		}
+	}
+	&:hover {
+		.arrow {
+			&.one {
+				top: 45px;
+				transform: rotateX(180deg)
+			}
+			&.two {
+				top: 15px;
+			}
+		}
+	}
+}
+
+.sidebar-menu-container {
+	color: #FFFFFF;
+	position: fixed;
+	left: -243px;
+	width: 240px;
+	height: 100%;
+	background: #2A93D5;
+	-webkit-box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow:    3px 3px 0px 0px rgba(0, 0, 0, 0.2);
+	box-shadow:         3px 3px 0px 0px rgba(0, 0, 0, 0.2);
+	.menu-title {
+		height: 100px;
+		box-sizing: border-box;
+		padding: 20px;
+		overflow: hidden;
+		.logo-container	{
+			float: left;
+			height: 60px;
+			width: 60px;
+			line-height: 60px;
+			text-align: center;
+			.logo {
+				width: 55px;
+			}
+		}
+		.title {
+			float: left;
+			height: 60px;
+			line-height: 60px;
+			font-size: 18px;
+			font-weight: 800;
+			padding-left: 50px;
+		}
+	}
+	.item-list {
+		margin: 0;
+		margin-top: 20px;
+		padding: 0;
+		width: 100%;
+		padding: 0px 20px;
+		box-sizing: border-box;
+		list-style-type: none;
+		> li {
+			margin-bottom: 38px;
+			padding: 0;
+			position: relative;
+			> a {
+				display: block;
+				width: 100%;
+				height: 28px;
+				line-height: 28px;
+				color: #FFFFFF;
+				font-weight: 800;
+				font-size: 18px;
+				> img {
+					width: 28px;
+					margin-right: 32px;
+				}
+				> .spinin-wheel {
+					opacity: 0;
+					position: absolute;
+					height: 100%;
+					margin-top: 4px;
+					width: 1px;
+					right: 0;
+					top: 0;
+					background: rgba(255, 255, 255, 1);
+
+				}
+				&:hover {
+					text-decoration: none;
+					> .spinin-wheel {
+						opacity: 0;
+					}
+				}
+			}
+		}
+	}
+}
