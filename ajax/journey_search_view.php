@@ -79,16 +79,19 @@
 		$x = $x[1];
 		$x = explode(":", $x);
 		return $x[0] . ":" . $x[1];
+		return $skanetrafikenTime;
 	}
 
 	function timeAppart( $first, $second )
 	{
-		$app  = new DateTime($first . ":00");
-		$depp = new DateTime($second . ":00" );
+		$first  = str_replace(":", "", $first);
+		$app  	= new DateTime($first . ":00");
+		$second  = str_replace(":", "", $second);
+		$depp 	= new DateTime($second . ":00" );
 
 		$interval = $depp->diff($app);
 
-		return $interval->format("%h:%i");
+		return $interval->format("%h%i");
 	}
 
 
@@ -98,13 +101,12 @@
 
 
 	$foreachSecond = false;
-	
 	?>
 	<?php foreach ( $array AS $num ): ?>
 		<div class="row info-row <?php if ( $foreachSecond == true ): print 'second'; $foreachSecond = false; else: $foreachSecond = true; endif; ?>">
-			<div class="col-xs-1 text-center"><?php print giveRealTime( $num['RouteLinks']['RouteLink']['DepDateTime'] ); ?></div>
-			<div class="col-xs-1 text-center"><?php print giveRealTime( $num['RouteLinks']['RouteLink']['ArrDateTime'] ); ?></div>
-			<div class="col-xs-2 text-center"><?php print timeAppart( giveRealTime( $num['RouteLinks']['RouteLink']['DepDateTime'] ), giveRealTime( $num['RouteLinks']['RouteLink']['ArrDateTime'] ) ); ?></div>
+			<div class="col-xs-1 text-center"><?php print giveRealTime( ( isset($num['RouteLinks']['RouteLink'][0]['DepDateTime'] ) ? $num['RouteLinks']['RouteLink'][0]['DepDateTime'] : $num['RouteLinks']['RouteLink']['DepDateTime'] ) ); ?></div>
+			<div class="col-xs-1 text-center"><?php print giveRealTime( ( isset($num['RouteLinks']['RouteLink'][0]['ArrDateTime'] ) ? $num['RouteLinks']['RouteLink'][0]['ArrDateTime'] : $num['RouteLinks']['RouteLink']['ArrDateTime'] ) ); ?></div>
+			<div class="col-xs-2 text-center"><?php //print timeAppart( giveRealTime( $num['RouteLinks']['RouteLink']['DepDateTime'] ), giveRealTime( $num['RouteLinks']['RouteLink']['ArrDateTime'] ) ); ?></div>
 			<div class="col-xs-1 text-center"><?php print $num['NoOfChanges']; ?></div>
 			<div class="col-xs-2 text-center"><img></div>
 			<div class="col-xs-2 text-center"><?php print $num['Prices']['PriceInfo'][0]['Price']; ?> kr</div>

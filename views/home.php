@@ -29,7 +29,7 @@
 			<div class="placeholder" id="to" data-id=""></div>
 		</div>
 		<div class="buttonblock">
-			<a href="" class="button">
+			<a href="javascript:home_search();" class="button">
 				SNABB SÖK
 			</a>
 		</div>
