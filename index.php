@@ -83,7 +83,7 @@
 	}
 	elseif ( file_exists( basein("controllers/" . $globalData['url_data'][0] . ".php") ) )
 	{
-		include basein("controllers/" . $globalData['url_data'][0]);
+		include basein("controllers/" . $globalData['url_data'][0] . ".php");
 	}
 	else
 	{

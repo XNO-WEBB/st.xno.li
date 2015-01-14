@@ -53,14 +53,15 @@
  *---------------------------------------------------------------
  */
 
+
 	foreach ( $_GET AS $key => $value )
 	{
 		$_GET[$key] = $db->protectPost($value);
 	}
 
 
-	$api_url 		= "http://www.labs.skanetrafiken.se/v2.2/resultspage.asp?cmdaction=next&selPointFr=malm%F6%20C|80000|0&selPointTo=landskrona|82000|0&LastStart=2015-01-14%2016:38";
-	$api_call 		= ( isset($_GET['x'], $_GET['y']) ? "&x=" . $_GET['x'] . "&y=" . $_GET['y'] : NULL );
+	$api_url 		= "http://www.labs.skanetrafiken.se/v2.2/resultspage.asp";
+	$api_call 		= "?cmdaction=next&selPointFr=".urlencode($_GET['fromPoint'])."|".urlencode($_GET['fromId'])."|0&selPointTo=".urlencode($_GET['toPoint'])."|".urlencode($_GET['toId'])."|0&LastStart=" . date("Y-m-d%20H:i");
 		
 	$xml 			= file_get_contents( $api_url . $api_call );
 	$xml 			= str_ireplace(['SOAP-ENV:', 'SOAP:'], '', $xml);
@@ -68,7 +69,6 @@
 	$xml			= json_encode($xml);
 	$xml			= json_decode($xml, true);
 		
-	$points 		= $xml;
-	print_r($xml);
-	//$api_response 	= json_encode($points);
-	//print $api_response;
+	$points 		= $xml['Body']['GetJourneyResponse']['GetJourneyResult']['Journeys']['Journey'];
+	$api_response 	= json_encode($points);
+	print $api_response; 

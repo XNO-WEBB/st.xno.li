@@ -1,6 +1,7 @@
-@color1 = #32AFFF;
-@color2 = #2A93D5;
-@color3 = #FFFFFF;
+@color1: #32AFFF;
+@color2: #2A93D5;
+@color3: #FFFFFF;
+@color4: #2ea3ed;
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);
 
@@ -271,6 +272,31 @@ body {
 				}
 
 			}
+		}
+	}
+}
+
+/*
+		JOURNEY SEARCH
+*/
+
+.journey-container {
+	max-width: 800px;
+	margin: 0 auto;
+	color: #FFF;
+	.headings {
+		padding: 10px;
+		background: @color2;
+		font-weight: 800;
+	}
+	.info-row {
+		padding: 5px 10px;
+		font-weight: 700;
+		&.second {
+			background: @color4;
+		}
+		&:hover {
+			background: #2A93D5;
 		}
 	}
 }
