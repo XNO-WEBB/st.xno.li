@@ -59,8 +59,8 @@
 	}
 
 
-	$api_url 		= "http://www.labs.skanetrafiken.se/v2.2/querystation.asp?inpPointfr=";
-	$api_call 		= ( isset($_GET['stationName']) ? urlencode($_GET['stationName']) : urlencode("Lund C") );
+	$api_url 		= "http://www.labs.skanetrafiken.se/v2.2/resultspage.asp?cmdaction=next&selPointFr=malm%F6%20C|80000|0&selPointTo=landskrona|82000|0&LastStart=2015-01-14%2016:38";
+	$api_call 		= ( isset($_GET['x'], $_GET['y']) ? "&x=" . $_GET['x'] . "&y=" . $_GET['y'] : NULL );
 		
 	$xml 			= file_get_contents( $api_url . $api_call );
 	$xml 			= str_ireplace(['SOAP-ENV:', 'SOAP:'], '', $xml);
@@ -68,7 +68,7 @@
 	$xml			= json_encode($xml);
 	$xml			= json_decode($xml, true);
 		
-	$points 		= $xml['Body']['GetStartEndPointResponse']['GetStartEndPointResult']['StartPoints']['Point'];
-	$api_response 	= json_encode($points);
-
-	print $api_response;
+	$points 		= $xml;
+	print_r($xml);
+	//$api_response 	= json_encode($points);
+	//print $api_response;

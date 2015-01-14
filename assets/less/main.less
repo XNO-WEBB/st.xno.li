@@ -1,3 +1,7 @@
+@color1 = #32AFFF;
+@color2 = #2A93D5;
+@color3 = #FFFFFF;
+
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);
 
 body {
@@ -14,10 +18,11 @@ body {
 }
 
 .sidebar-toggle-container {
-	background: #2994D8;
+	background: rgba(0, 0, 0, 0.15);
 	width: 80px;
 	height: 80px;
 	position: absolute;
+	z-index: 10;
 	cursor: pointer;
 	.arrow {
 		width: 45px;
@@ -140,6 +145,7 @@ body {
   	margin-left: -264px;
 	transform: translateY(-50%);
 	box-sizing: border-box;
+	z-index: 1;
 
 	@media screen and (max-width: 537px)
 	{
@@ -209,7 +215,14 @@ body {
 					border-color: rgba(0, 0, 0, 0.7);
 				}
 			}
-			.info {
+			.placeholder {
+				position: absolute;
+				width: 100%;
+				text-align: center;
+				bottom: 5px;
+				font-size: 11px;
+				font-weight: 800;
+				color: #A9A9A9;
 
 			}
 		}
@@ -251,6 +264,10 @@ body {
 					width: 100%;
 					left: initial;
 					margin-left: initial;
+				}
+				&:hover {
+					text-decoration: none;
+					background: #2589c6;
 				}
 
 			}

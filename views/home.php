@@ -17,14 +17,16 @@
 	</div>
 		<div class="selectblock">
 			<div class="title">URSPRUNG</div>
-			<input type="text" placeholder="Lund C...">
+			<input type="text" class="search_input" placeholder="Lund C...">
+			<div class="placeholder" id="from" data-id=""></div>
 		</div>
 		<div class="middleblock">
 			<img src="<?php print baseurl("assets/img/train-icon.png"); ?>">
 		</div>
 		<div class="selectblock">
 			<div class="title">DESTINATION</div>
-			<input type="text" placeholder="Helsingborg C...">
+			<input type="text" class="search_input" placeholder="Helsingborg C...">
+			<div class="placeholder" id="to" data-id=""></div>
 		</div>
 		<div class="buttonblock">
 			<a href="" class="button">

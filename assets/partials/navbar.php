@@ -3,7 +3,6 @@
     <img class="arrow one" src="<?php print baseurl("assets/img/down-arrow.png"); ?>">
     <img class="arrow two" src="<?php print baseurl("assets/img/down-arrow.png"); ?>">
   </a>
-  
   <div class="sidebar-menu-container">
     <div class="menu-title">
         <div class="logo-container">

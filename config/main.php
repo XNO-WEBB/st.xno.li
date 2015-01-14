@@ -123,7 +123,7 @@ class db
 
 	public function protectPost( $string )
 	{	
-		$string = $mysqli->real_escape_string( $string );
+		$string = $this->mysqli->real_escape_string( $string );
 		$string = strip_tags( $string );
 		
 		return $string;
