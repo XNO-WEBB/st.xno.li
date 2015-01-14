@@ -12,21 +12,22 @@
 
 <div class="search-wrapper">
 	<div class="search-container">
-		<div class="custom-row">
-			<div type="text" class="blockleft title">URSPRUNG</div>
-			<div class="blockmiddle">
-			</div>
-			<div type="text" class="blockleft title">DESTINATION</div>
+	<div class="train-icon-container">
+		<img src="<?php print baseurl("assets/img/train-icon.png"); ?>">
+	</div>
+		<div class="selectblock">
+			<div class="title">URSPRUNG</div>
+			<input type="text" placeholder="Lund C...">
 		</div>
-		<div class="custom-row">
-			<input type="text" class="blockleft" placeholder="Lund C..">
-			<div class="blockmiddle">
-				<img src="<?php print baseurl("assets/img/train-icon.png"); ?>">
-			</div>
-			<input type="text" class="blockleft" placeholder="Lund C..">
+		<div class="middleblock">
+			<img src="<?php print baseurl("assets/img/train-icon.png"); ?>">
 		</div>
-		<div class="custom-row">
-			<a href="" class="search-button">
+		<div class="selectblock">
+			<div class="title">DESTINATION</div>
+			<input type="text" placeholder="Helsingborg C...">
+		</div>
+		<div class="buttonblock">
+			<a href="" class="button">
 				SNABB SÖK
 			</a>
 		</div>
