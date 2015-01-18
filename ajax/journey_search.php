@@ -59,9 +59,14 @@
 		$_GET[$key] = $db->protectPost($value);
 	}
 
+	if ( !isset( $_GET['date'] ) )
+	{
+		$_GET['date'] = date("Y-m-d%20H:i");
+	}
+
 
 	$api_url 		= "http://www.labs.skanetrafiken.se/v2.2/resultspage.asp";
-	$api_call 		= "?cmdaction=next&selPointFr=".urlencode($_GET['fromPoint'])."|".urlencode($_GET['fromId'])."|0&selPointTo=".urlencode($_GET['toPoint'])."|".urlencode($_GET['toId'])."|0&LastStart=" . date("Y-m-d%20H:i");
+	$api_call 		= "?cmdaction=next&selPointFr=".urlencode($_GET['fromPoint'])."|".urlencode($_GET['fromId'])."|0&selPointTo=".urlencode($_GET['toPoint'])."|".urlencode($_GET['toId'])."|0&LastStart=" . $_GET['date'];
 		
 	$xml 			= file_get_contents( $api_url . $api_call );
 	$xml 			= str_ireplace(['SOAP-ENV:', 'SOAP:'], '', $xml);

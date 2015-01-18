@@ -67,10 +67,10 @@ $(function(){
 	var request;
 	$(".search_input").keyup(function(event){
 
-	/*	if ( typeof request !== 'undefined' )
+		if ( typeof request !== 'undefined' )
 		{
 			request.abort();
-		} */
+		} 
 		
 		var input 		= $(this);
 		var parent 		= input.parent();

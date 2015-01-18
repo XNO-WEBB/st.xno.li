@@ -16,6 +16,8 @@ body {
 
 .navbar-container {
 	position: absolute;
+	top: 0;
+	left: 0;
 }
 
 .sidebar-toggle-container {
@@ -284,19 +286,33 @@ body {
 	max-width: 800px;
 	margin: 0 auto;
 	color: #FFF;
+	margin-top: 100px;
+	font-size: 12px;
+	@media screen and ( min-width: 768px )
+	{
+		font-size: 14px;
+	}
 	.headings {
-		padding: 10px;
+		padding: 12px 0px;
 		background: @color2;
 		font-weight: 800;
+		overflow: hidden;
+		.wrap-it {
+			white-space:nowrap; 
+    		text-overflow: ellipsis;
+		}
 	}
 	.info-row {
-		padding: 5px 10px;
+		padding: 7px 0px;
 		font-weight: 700;
 		&.second {
 			background: @color4;
 		}
 		&:hover {
-			background: #2A93D5;
+			background: #2c9be0;
+		}
+		hr {
+			margin: 8px 0;
 		}
 	}
 }
