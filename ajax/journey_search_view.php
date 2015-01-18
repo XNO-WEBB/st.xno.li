@@ -117,7 +117,7 @@
 		return $h . ":" . $min;
 	}
 
-
+	
 	$foreachSecond = false;
 	?>
 	<?php foreach ( $array AS $num ): ?>
@@ -133,31 +133,25 @@
 			<div class="hidden-xs	col-sm-2	col-md-2	col-lg-2 wrap-it">&nbsp;</div>
 			<div class="col-xs-2	col-sm-2	col-md-2	col-lg-2 wrap-it"><span style="position: absolute"><?php print $num['Prices']['PriceInfo'][0]['Price']; ?> kr</span></div>
 			<div class="col-xs-1	col-sm-2	col-md-2	col-lg-2 wrap-it">&nbsp;</div>
-			<div class="col-xs-12"><hr></div>
-			<div class="col-xs-12">
-				<div class="row">
-					<div class="col-xs-1"></div>
-					<div class="col-xs-5">FRÅN-TILL</div>
-					<div class="col-xs-2">LÄGE</div>
-					<div class="col-xs-2">TID</div>
-					<div class="col-xs-2">INFO</div>
+			<div class="close-j">
+				<div class="col-xs-12" style="padding-top: 10px;">
+					<div class="row">
+						<div class="col-xs-1"></div>
+						<div class="col-xs-5">FRÅN-TILL</div>
+						<div class="col-xs-2">LÄGE</div>
+						<div class="col-xs-2">TID</div>
+						<div class="col-xs-1">INFO</div>
+					</div>
+					<?php foreach( $num['RouteLinks']['RouteLink'] AS $key => $value ): ?>
+					<div class="row" style="padding: 7px 0px;">
+						<div class="col-xs-1"><?php print $value['Line']['TransportModeId']; ?></div>
+						<div class="col-xs-5"><?php print $value['From']['Name']; ?><br> - <?php print $value['To']['Name']; ?></div>
+						<div class="col-xs-2"></div>
+						<div class="col-xs-2"><?php print giveRealTime($value['DepDateTime']); ?><br><?php print giveRealTime($value['ArrDateTime']); ?></div>
+						<div class="col-xs-1"></div>
+					</div>
+					<?php endforeach; ?>
 				</div>
-				<?php foreach( $num['RouteLinks']['RouteLink'] AS $key => $value ): ?>
-				<?php
-					$stationFrom = apiCall("http://www.labs.skanetrafiken.se/v2.2/stationresults.asp?selPointFrKey=".$value['From']['Id']."&selDirection=0&inpTime=".giveRealTime($value['DepDateTime'])."&inpDate=".date("ymd"));
-					print json_encode($stationFrom);
-					$stationFrom = $stationFrom['Body']['GetDepartureArrivalResponse']['GetDepartureArrivalResult']['GetDepartureArrivalResult']['Lines']['Line'][0];
-					$stationTo 	 = apiCall("http://www.labs.skanetrafiken.se/v2.2/stationresults.asp?selPointFrKey=".$value['To']['Id']."&selDirection=1&inpTime=".giveRealTime($value['ArrDateTime'])."&inpDate=".date("ymd"));
-					$stationTo 	 = $stationTo['Body']['GetDepartureArrivalResponse']['GetDepartureArrivalResult']['GetDepartureArrivalResult']['Lines']['Line'][0];
-				?>
-				<div class="row">
-					<div class="col-xs-1"><?php print $value['Line']['TransportModeId']; ?></div>
-					<div class="col-xs-5"><?php print $value['From']['Name']; ?><br> - <?php print $value['To']['Name']; ?></div>
-					<div class="col-xs-2"></div>
-					<div class="col-xs-2"><?php print giveRealTime($value['DepDateTime']); ?><br><?php print giveRealTime($value['ArrDateTime']); ?></div>
-					<div class="col-xs-2"></div>
-				</div>
-				<?php endforeach; ?>
 			</div>
 		</div>
 	<?php endforeach; ?>

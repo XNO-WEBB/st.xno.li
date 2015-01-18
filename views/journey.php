@@ -24,7 +24,7 @@
 		<?php
 		$getTree = $globalData['url_data'];
 		$request = "http://" . $_SERVER['SERVER_NAME'] . baseurl("ajax/journey_search_view.php") . "?fromPoint=" . $getTree[1] . "&fromId=" . $getTree[2] . "&toPoint=" . $getTree[3] . "&toId=" . $getTree[4] ;
-		print $request;
+		//print $request;
 		?>
 		<?php print file_get_contents($request); ?>
 	</div>

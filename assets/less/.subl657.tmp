@@ -335,6 +335,7 @@ body {
 		background: url("http://xno.se/assets/img/background_xno.png");
 		max-width: 100%;
 		overflow: hidden;
+		text-align: center;
 		.content {
 			max-width: 1200px;
 		}

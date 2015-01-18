@@ -13,7 +13,8 @@
         </div>
     </div>
     <ul class="item-list">
-        <li><a href="#"><img src="<?php print baseurl("assets/img/info-icon.png"); ?>">OM OSS <div class="spinin-wheel"></div></a></li>
+        <li><a href="<?php print baseurl(); ?>"><img src="<?php print baseurl("assets/img/home-icon.png"); ?>">HEM <div class="spinin-wheel"></div></a></li>
+        <li><a href="<?php print baseurl("omoss"); ?>"><img src="<?php print baseurl("assets/img/info-icon.png"); ?>">OM OSS <div class="spinin-wheel"></div></a></li>
         <li><a href="#"><img src="<?php print baseurl("assets/img/login-icon.png"); ?>">LOGGA IN <div class="spinin-wheel"></div></a></li>
         <li><a href="#"><img src="<?php print baseurl("assets/img/login-icon.png"); ?>">REGISTRERA <div class="spinin-wheel"></div></a></li>
     </ul>
